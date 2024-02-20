@@ -1,0 +1,166 @@
+.creditecard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 110px;
+}
+.userid{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50px;
+    width: 300px;
+    border: 2px solid gray;
+    gap: 10px;
+    
+}
+.userid span{
+    font-size: 20px;
+    font-weight: 500;
+}
+.useridspan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background: rgb(71, 71, 105);
+    color: white;
+}
+.divno{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+
+}
+.creditid{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50px;
+    width: 400px;
+    border: 2px solid gray;
+    gap: 10px;
+}
+.creditid span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.creditspan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background: rgb(71, 71, 105);
+    color: white;
+}
+.accn_id{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50px;
+    width: 400px;
+    border: 2px solid gray;
+    gap: 10px;
+}
+.accnspan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background: rgb(71, 71, 105);
+    color: white;
+}
+.accn_id span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.credit-head{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 60px;
+    width: 80%;
+    background: rgb(65, 69, 94);
+    color: white;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.credit-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.credit-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: gainsboro;
+    color: white;
+}
+.divblance{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+    margin: 20px 10px;
+}
+.ac_blan{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50px;
+    width: 400px;
+    border: 2px solid gray;
+    gap: 10px;
+}
+.acblspan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background: rgb(71, 71, 105);
+    color: white;
+}
+.ac_blan span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.cr_bl{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 50px;
+    width: 400px;
+    border: 2px solid gray;
+    gap: 10px;
+}
+.crblspan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background: rgb(71, 71, 105);
+    color: white;
+}
+.cr_bl span{
+    font-size: 16px;
+    font-weight: 500;
+}
+

@@ -1,0 +1,95 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px
+}
+.about h1{
+    font-size:40px ;
+    font-weight: 700;
+    color: rgb(71, 71, 108);
+}
+.about h3{
+    font-size: 18px;
+    font-weight: 200px;
+    color: grey;
+}
+.mission{
+    font-size: 12px;
+    color: rgb(114, 114, 188);
+}
+.core-value{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.core-value a{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+.Our_history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Our_history h1{
+    font-size: 30px;
+
+}
+.Our_history p{
+    font-size: 10px;
+    font-weight: 500;
+    color: rgb(65, 65, 92);
+}
+.mi-card-caontainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.mil-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(230, 229, 229);
+    border-radius: 10px;
+    padding: 5px;
+
+}
+.mil-card h2{
+    color: blue;
+}
+.mil-card h3{
+    font-size: 12px;
+    color: rgb(90, 90, 90);
+}
+.leader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.leader h1{
+    font-size: 25px;
+}
+.leader-card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.leader-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.leader-card img{
+    height: 150px;
+    width: 150px;
+}

@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0px ;
+  }
+  
+  :root {
+    --heights: 100%;
+    --widths: 100%;
+  }
+  
+  .slider-container {
+    margin-top: 0px;
+    height:500px;
+    width: auto;
+    align-items: center;
+    padding: 0px 150px;
+    position: relative;
+   padding-top: 100px ;
+    overflow: hidden;
+    justify-content: center;
+   
+  }
+  section{
+    width: 1000px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    background: pink;
+    border-radius: 20px;
+  }
+  
+  .active {
+    display: inline-block;
+  }
+  
+  .inactive {
+    display: none;
+  }
+  
+  .slides {
+    flex: 1;
+    display: flex;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px;
+  }
+ 
+
+  .img-sid{
+    margin-top: 50px;
+    height: 450px;
+    width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+   
+
+  }
+
+  
+  .slide-title,
+  .slide-text {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    z-index: 10;
+  }
+  
+  .slide-text {
+    top: 65%;
+    font-size: 2rem;
+  }
+  
+  .prev,
+  .next {
+    color: transparent;
+    cursor: pointer;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    margin-top: -3rem;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 0px 5px 5px 0px;
+  }
+  
+  .slider-container:hover .prev,.slider-container:hover .next {
+    color: black
+  }
+  
+  .slider-container:hover .prev:hover,
+  .slider-container:hover .next:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.5s ease-in;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 5px 0px 0px 5px;
+  }
+  
+  .all-dots {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    top: 85%;
+    justify-content: center;
+    z-index: 200;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0px 3px;
+    background-color: transparent;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .slider-container:hover .dot:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* .active-dot {
+    background-color: rgba(255, 255, 255, 0.5);
+  } */
+  
+  .slider-container:hover .dot{
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .slider-container:hover .active-dot{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .play-pause {
+    color: black;
+  }

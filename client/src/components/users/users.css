@@ -1,0 +1,48 @@
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 110px;
+    width: 100%;
+
+}
+.header-user{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr 2fr 1fr 1fr;
+    height: 50px;
+    width: 120%;
+    align-content: center;
+    justify-content: center;
+    background: rgb(66, 66, 93);
+    border-radius: 10px;
+    
+
+
+
+}
+.header-user span{
+    color: white;
+}
+.user-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: auto;
+    width: 120%;
+}
+.user-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr 2fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    background: rgb(234, 228, 228);
+    border-radius: 5px;
+  
+
+}
+
