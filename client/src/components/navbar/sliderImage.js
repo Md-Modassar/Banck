@@ -1,6 +1,6 @@
-import First from "../../images/hero1.jpg";
-import Second from "../../images/hero2.avif";
-import Third from "../../images/hero3.avif";
+import First from "../../images/bank1.webp";
+import Second from "../../images/bank2.jpg";
+import Third from "../../images/bank3.jpg";
 
 
 export default [

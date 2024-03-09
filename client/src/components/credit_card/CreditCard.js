@@ -3,6 +3,8 @@ import "./creditcard.css"
 //import data from "../data/credit-carddata"
 import Header from '../header/Header'
 import axios from "axios"
+import NewCreditCard from '../../page/creditcard/NewCreditCard'
+import {BASE_URL} from "../../server/server"
 
 const CreditCard = () => {
     //const data1 =data[0]
@@ -18,7 +20,7 @@ const CreditCard = () => {
 
     const getusers=async()=>{
       try{
-          const result=await axios.get(`http://localhost:8080/getcreditcard/${id}`)
+          const result=await axios.get(`${BASE_URL}/getcreditcard/${id}`)
          console.log("rsult=--------0000-",result?.data?.object)
           //result.data.status
           console.log("hi")
@@ -75,6 +77,7 @@ const CreditCard = () => {
          </div>
      
     </div>
+
     </>
   )
 }

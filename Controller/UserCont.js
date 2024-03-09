@@ -86,6 +86,34 @@ exports.login=async(req,res)=>{
     return res.status(500).send({status:false,message:err.message})
   }
 }
+exports.forgetpassword=async(req,res)=>{
+   try{
+      const data=req.body
+      const {email,newpassword}=data
+ 
+      if(!email){
+       return res.status(400).send({status:false,message:"Email is required field"})
+    }
+    if(!newpassword){
+       return res.status(400).send({status:false,message:"password is required field"})
+    }
+ 
+    if(!isValidEmail(email)){
+       return res.status(400).send({status:false,message:"It is not email"})
+    }
+ 
+    const emailExist=await userMode.findOne({email:email})
+ 
+    if(!emailExist){
+       return res.status(400).send({statue:false,message:"This Email already exist"})
+    }
+
+    const updatepassword=await userMode.findOneAndUpdate({email:email} ,{$set:{password:newpassword}},{new:true})
+    return res.status(200).send({status:true,message:"password update successfully"})
+   }catch(err){
+      return res.status(500).send({status:false,message:err.message})
+   }
+}
 
 exports.getallacount=async(req,res)=>{
   try{

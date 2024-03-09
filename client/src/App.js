@@ -16,21 +16,23 @@ import Login from './page/login/Login';
 import ForgetPassword from './page/forgetpassword/ForgetPassword';
 import Edit from './page/eidtaccount/Edit';
 import CreateTransction from './page/transction/CreateTransction';
+import NewCreditCard from './page/creditcard/NewCreditCard';
 
 function App() {
+  
   return (
     <Routes>
-      <Route path='/' element={<Home/>}/>
-   
+      <Route path='/home' element={<Home/>}/>
       <Route path='/transction' element={<Transction/>}/>
       <Route path='/users' element={<Users/>}/>
       <Route path='/creditcard' element={<CreditCard/>}/>
       <Route path='/account/:id' element={<UserCountde/>}/>
       <Route path='/signup' element={<SignUp/>}/>
-      <Route path='/login' element={<Login/>}/>
+      <Route path='/'  element={<Login/>}/>
       <Route path='/forget' element={<ForgetPassword/>}/>
       <Route path='/edit/:id' element={<Edit/>}/>
       <Route path='/createtransaction' element={<CreateTransction/>}/>
+      <Route path='/newcreditcard' element={<NewCreditCard/>}/>
       
     </Routes>
   );

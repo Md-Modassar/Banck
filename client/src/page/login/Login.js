@@ -3,9 +3,10 @@ import "./login.css"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useAuth } from '../../context/auth'
+import PopUp from "../../components/popup/PopUp"
 
 const Login = () => {
-  //const [isPopUp,setIsPopUp]=useState(false)
+  const [isPopUp,setIsPopUp]=useState(false)
   const [auth,setAuth]=useAuth() 
   const [input,setInput]=useState({
     email:"",
@@ -13,14 +14,14 @@ const Login = () => {
    });
    const navigate=useNavigate();
    const location =useLocation();
-  //  const openPopUp = () => {
-  //   setIsPopUp(true);
-  // };
-
-  // const closePopUp = () => {
-  //   setIsPopUp(false);
-  //   window.location.reload();
-  // };
+ 
+   const openPopUp = () => {
+    setIsPopUp(true);
+  };
+  const closePopUp = () => {
+    setIsPopUp(false);
+    window.location.reload();
+  };
    const handleChange=(e)=>{
     setInput((preState)=>({
       ...preState,
@@ -38,7 +39,7 @@ const Login = () => {
       //console.log("rsult=--------0000-",result.data)
       status=result.data.status
       if(result.data.status){ 
-        //openPopUp()
+        openPopUp()
         setAuth({
           ...auth,
           user:result.data.emailExist,
@@ -46,7 +47,7 @@ const Login = () => {
   
         })
         localStorage.setItem("auth",JSON.stringify(result.data))
-        navigate(location.state||'/')
+        navigate(location.state||'/home')
        // console.log("successfull",result)
         //console.log("result",result.data)
     }
@@ -55,7 +56,7 @@ const Login = () => {
   //  console.log("error===",err.response.data)
     status=err.response.data.status
   ///  console.log("login--",status)
-   // openPopUp()
+   openPopUp()
    }
  }
   return (
@@ -70,6 +71,10 @@ const Login = () => {
  </div>
  <a href='/forget'>Forget Password</a>
  <a href='/' style={{textDecoration:"none",color:"black"}}>Home Page</a>
+ <PopUp isOpen={isPopUp} onClose={closePopUp} status={status}>
+     <h2>Update sccessfully</h2>
+     <p>Pop-Up content goes here.</p>
+   </PopUp>
 </div>
   )
 }

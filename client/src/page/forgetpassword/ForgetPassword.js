@@ -12,7 +12,7 @@ const ForgetPassword = () => {
     
  </div>
  
- <a href='/' style={{textDecoration:"none",color:"black"}}>Home Page</a>
+ <a href='/home' style={{textDecoration:"none",color:"black"}}>Home Page</a>
 </div>
   )
 }

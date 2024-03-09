@@ -67,7 +67,7 @@ const SignUp = () => {
       if(result){ 
        
        
-        navigate(location.state||'/login')
+        navigate(location.state||'/')
        
     }
   
@@ -92,7 +92,7 @@ const SignUp = () => {
      <input name="balance" type="text" value={input.balance} placeholder='Enter Balance' onChange={handleChange} />
 
      <div className='butn'>
-      <Link to="/login"> <button>Login</button></Link> 
+      <Link to="/"> <button>Login</button></Link> 
         <button onClick={heandelSubmit}>Submit</button>
      </div>
     </div>

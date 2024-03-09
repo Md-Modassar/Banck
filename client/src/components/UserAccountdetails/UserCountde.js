@@ -3,18 +3,22 @@ import "./useraccountdet.css"
 import profile from "../../images/profile.png"
 import Header from '../header/Header'
 //import data1 from "../data/userdata"
-import { useParams } from 'react-router-dom'
+import { useParams,useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
+//import { Link, useLocation, useNavigate } from 'react-router-dom'
+import {BASE_URL} from "../../server/server"
 const UserCountde = () => {
+  const navigate=useNavigate();
+  const location =useLocation();
     const {id}=useParams()
     console.log(id)
     const [data,setData]=useState([])
+    const [data1,setData1]=useState([])
 
     const getdata=async()=>{
       try{
-        const result=await axios.get(`http://localhost:8080/user/${id}`)
-        console.log("rsult=--------0000-",result.data.getusers)
+        const result=await axios.get(`${BASE_URL}/user/${id}`)
+        //console.log("rsult=--------0000-",result.data.getusers)
         //result.data.status
         if(result.data.status){ 
           setData(result.data.user)
@@ -28,10 +32,67 @@ const UserCountde = () => {
      }
     }
 
+    const findcreditcard=async()=>{
+      try{
+        const result=await axios.get(`${BASE_URL}/checkcreditcard/${id}`)
+        //console.log("rsult=--------0000-",result.data.data)
+        //result.data.status
+        if(result){ 
+          setData1(result.data.data)
+          console.log(data1)
+      }
+    
+     }catch(err){
+ 
+      console.log({meassage:err.meassage})
+  
+     }
+    }
+    
+
     useEffect(()=>{
      getdata()
+     findcreditcard()
     },[])
+    const storedDataString = localStorage.getItem("auth");
 
+    // Parse the JSON string into an object
+    const storedData = JSON.parse(storedDataString);
+    
+    // Access the _id property from the parsed object
+    //const id = storedData.emailExist._id;
+
+    const object={};
+       object.userId=id
+       object.accountNumber= storedData?.emailExist?.account?.accountNumber
+      
+       let status
+      const heandelSubmit=async()=>{
+        try{
+          const result=await axios.post(`${BASE_URL}/creditcard`,object)
+          //console.log("rsult=--------0000-",result.data)
+          //status=result.data.status
+          if(result){ 
+            //openPopUp()
+          //   setAuth({
+          //     ...auth,
+          //     user:result.data.emailExist,
+          //     token:result.data.token
+      
+          //   })
+           // localStorage.setItem("auth",JSON.stringify(result.data))
+            navigate(location.state||'/')
+           // console.log("successfull",result)
+            //console.log("result",result.data)
+        }
+      
+       }catch(err){
+      //  console.log("error===",err.response.data)
+        status=err.response.data.status
+      ///  console.log("login--",status)
+       // openPopUp()
+       }
+     }
     
 
   return (
@@ -40,7 +101,7 @@ const UserCountde = () => {
     <div className='usercount'>
         <h1>Details of Account No.{data?.account?.accountNumber}</h1>
         <span className='user-head'>
-            User Details {data?.account?.accountNumber}
+            UserId: {data?._id}
         </span>
         
             <div className='user-detail-in'>
@@ -72,7 +133,12 @@ const UserCountde = () => {
              <div className='av_b'><span>Availble Balance</span><span> ₹ {data?.account?.balance}</span></div>
             </div>
         </div>
-
+        {data1?(<></>):
+        (<div className='stb'>
+          <h1>You want to use credit Card then click this button</h1>
+          <button className='credit_but' onClick={ heandelSubmit}>Credit Card</button>
+       </div>)
+      }
     </div>
     </>
   )

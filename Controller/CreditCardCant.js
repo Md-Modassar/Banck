@@ -45,3 +45,25 @@ exports.creditCardCnt=async(req,res)=>{
     }
 }
 
+exports.creditCardByuserid=async(req,res)=>{
+  try{
+       let {id}=req.params;
+
+       if(!ObjectId.isValid(id)){
+        return res.status(400).send({status:false,message:"Please enter valide userid"})
+       }
+
+       const useresit =await userModel.findById(id)
+
+      if(!useresit){
+        return res.status(404).send({status:false,message:"Please enter valid userid"})
+      }
+
+       const data=await CrediModel.findOne({userId:id})
+
+       return res.status(200).send({status:true,data})
+  }catch(err){
+    return res.status(500)
+  }
+}
+

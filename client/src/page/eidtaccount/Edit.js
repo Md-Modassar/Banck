@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import {  useLocation, useNavigate } from 'react-router-dom'
 import axios from "axios";
+import {BASE_URL} from "../../server/server"
 
 const Edit = () => {
 
@@ -13,7 +14,7 @@ const Edit = () => {
 
     const getdata=async()=>{
       try{
-        const result=await axios.get(`http://localhost:8080/user/${id}`)
+        const result=await axios.get(`${BASE_URL}/user/${id}`)
         console.log("rsult=--------0000-",result.data.getusers)
         //result.data.status
         if(result.data.status){ 
@@ -83,7 +84,7 @@ if (input.accountType) object.accountType = input.accountType;
 if (input.balance) object.balance = input.balance;
     const heandelSubmit=async()=>{
       try{
-        const result=await axios.put(`http://localhost:8080/updateuser/${id}`,object)
+        const result=await axios.put(`${BASE_URL}/updateuser/${id}`,object)
        
         status=result.data.status
         if(result){ 

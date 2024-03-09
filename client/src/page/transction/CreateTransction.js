@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import "./transction.css"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Header from "../../components/header/Header"
 
 const CreateTransction = () => {
 
@@ -77,17 +78,21 @@ const CreateTransction = () => {
        }
      }
     return (
-      <div className='signup'>
+      <>
+      <Header/>
+       <div className='signup'>
           <h1>Transction</h1>
        <input name="description" type='text' value={input.description} placeholder='Enter description' onChange={handleChange} />
        <input name="amount" type='text' value={input.amount} placeholder='Enter amount' onChange={handleChange} />
        <>If You want to transfer money then enter Transfer AcccountNo</>
        <input name='Transfer_AccountNo' type='text' value={input.Transfer_AccountNo} placeholder='Enter Transfer_AccountNo' onChange={handleChange}/>
        <div className='butn'>
-        <Link to="/login"> <button>Login</button></Link> 
+        <Link to="/"> <button>Login</button></Link> 
           <button onClick={heandelSubmit}>Submit</button>
        </div>
       </div>
+      </>
+     
     )
 }
 

@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom'
 import axios from "axios"
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+import {BASE_URL} from "../../server/server"
 
 const Users = () => {
     const [data,setData]=useState([])
     const getusers=async()=>{
         try{
-            const result=await axios.get("http://localhost:8080/getalluser")
+            const result=await axios.get(`${BASE_URL}/getalluser`)
           //  console.log("rsult=--------0000-",result.data.getusers)
             //result.data.status
             if(result.data.status){ 
@@ -35,7 +36,7 @@ const Users = () => {
     const deleteuser=async(id,i)=>{
         try{
             console.log("id",id)
-            const result=await axios.delete(`http://localhost:8080/userdelete/${id}`)
+            const result=await axios.delete(`${BASE_URL}/userdelete/${id}`)
           //  console.log("rsult=--------0000-",result.data.getusers)
             //result.data.status
             if(result){ 

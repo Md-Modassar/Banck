@@ -4,7 +4,7 @@ import "./transction.css"
 import Header from '../header/Header'
 import { useAuth } from '../../context/auth'
 import axios from "axios"
-
+import {BASE_URL} from "../../server/server"
 const Transction = () => {
   //const [auth]=useAuth()
   const storedDataString = localStorage.getItem("auth");
@@ -13,14 +13,14 @@ const Transction = () => {
   const storedData = JSON.parse(storedDataString);
   
   // Access the _id property from the parsed object
-  const id = storedData.emailExist._id;
+  const id = storedData?.emailExist?._id;
   
    console.log(id)
   //const data1=[]//=data[0]
   const [data,setData]=useState([])
     const getusers=async()=>{
         try{
-            const result=await axios.get(`http://localhost:8080/transction/${id}`)
+            const result=await axios.get(`${BASE_URL}/transction/${id}`)
            console.log("rsult=--------0000-",result?.data?.object)
             //result.data.status
             console.log("hi")
